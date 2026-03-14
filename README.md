@@ -24,15 +24,3 @@ El sistema está compuesto por tres contratos principales, diseñados siguiendo 
 El uso del token en esta Casa de Apuestas justifica la necesidad de crear y destruir tokens dinámicamente:
 * **Mint (Creación):** Se utiliza cuando un usuario deposita Ethers a cambio de fichas (`comprarFichas`) y cuando un usuario gana una apuesta, generándose nuevos tokens para pagarle su premio (`resolverEvento`).
 * **Burn (Destrucción):** Se utiliza en el momento en el que el jugador confirma una apuesta (`apostar`). En lugar de transferir el token a la casa, el token se "quema" o arriesga. Si el jugador pierde, el token permanece destruido; si gana, se le restituye mediante un nuevo mint.
-
-## 🚀 Cómo desplegar en Remix IDE
-
-1.  Abre [Remix IDE](https://remix.ethereum.org/) y sube los tres archivos `.sol` en la carpeta `contracts`.
-2.  Compila el archivo `CasaApuestas.sol` (las dependencias se compilarán automáticamente).
-3.  Ve a la pestaña de "Deploy & Run Transactions".
-4.  Selecciona el contrato `CasaApuestas` en el desplegable.
-5.  Despliega la pestaña del botón naranja "Deploy" y rellena los 3 parámetros de inicialización del token:
-    * `tokenName`: Ej. "FichasCasino"
-    * `tokenSymbol`: Ej. "FCH"
-    * `tokenDecimals`: Ej. 0 (Recomendado para pruebas sin decimales).
-6.  Pulsa "Transact". El sistema estará listo para ser utilizado.
